@@ -31,10 +31,11 @@ jobs:
         # uses: alexthemaster/action-build-typescript@ca4abf142f236aba57ae954c4f10615b006d1e6e
         uses: alexthemaster/action-build-typescript@v1.2.1
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-artifact@v3.1.0
         with:
           # Upload entire repository
-          path: 'dist'
+          path: '.'
+          name: build
   # Single deploy job since we're just deploying
   deploy:
     environment:
@@ -45,14 +46,10 @@ jobs:
     steps:
       - name: Download artifact
         uses: actions/checkout@v3
+        with:
+          name: build
       - name: Setup Pages
         uses: actions/configure-pages@v2
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          # Upload entire repository
-          path: '.'
-          
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
