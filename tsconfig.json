@@ -1,5 +1,9 @@
 {
     "compilerOptions": {
-        "outDir": "dist"
-    }
+        "outDir": "build",
+    },
+    "include": [
+        "index.html",
+        "style.css"
+    ]
 }
