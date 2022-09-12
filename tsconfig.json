@@ -4,6 +4,7 @@
     },
     "include": [
         "index.html",
-        "style.css"
+        "style.css",
+        "script.ts"
     ]
 }
