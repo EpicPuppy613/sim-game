@@ -1,5 +1,5 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Build and Deploy
 
 on:
   # Runs on pushes targeting the default branch
@@ -50,6 +50,8 @@ jobs:
           name: build
       - name: Setup Pages
         uses: actions/configure-pages@v2
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v1.0.4
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
