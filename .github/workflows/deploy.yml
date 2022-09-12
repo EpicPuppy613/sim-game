@@ -34,7 +34,7 @@ jobs:
         uses: actions/upload-artifact@v3.1.0
         with:
           # Upload entire repository
-          path: '.'
+          path: 'build'
           name: build
   # Single deploy job since we're just deploying
   deploy:
