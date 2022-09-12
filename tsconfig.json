@@ -1,10 +1,6 @@
 {
     "compilerOptions": {
-        "outDir": "build"
-    },
-    "include": [
-        "index.html",
-        "style.css",
-        "script.ts"
-    ]
+        "outDir": "build",
+        "module": "ESNext"
+    }
 }
