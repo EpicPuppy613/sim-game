@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
         "outDir": "build",
-        "module": "ESNext"
+        "module": "ESNext",
+        "lib": ["ES7", "DOM","ES2015.promise"]
     }
 }

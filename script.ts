@@ -99,17 +99,20 @@ class Mod {
     }
 };
 
+/**
+ * 
+ */
 class EventBus {
 
 };
 
-function init(mods: string[]) {
+async function init(mods: string[]) {
     G.width = window.innerWidth;
     G.height = window.innerHeight;
     canvas.width = G.width;
     canvas.height = G.height;
     for (const mod of mods) {
-        import(mod);
+        await import(mod);
     }
 };
 
@@ -122,7 +125,7 @@ export function registerMod(mod: Mod) {
             G.mods.push(modsToLoad[0]);
             G.modlist.push(modsToLoad[0].id);
             modsToLoad = modsToLoad.slice(1);
-            modsToLoad.push(G.modqueue);
+            modsToLoad = modsToLoad.concat(G.modqueue);
             G.modqueue = [];
         } else {
             G.modqueue.push(mod);
